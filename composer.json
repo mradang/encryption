@@ -1,0 +1,26 @@
+{
+    "name": "mradang/encryption",
+    "description": "encryption",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mradang",
+            "email": "mradang@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1.3",
+        "ext-mbstring": "*",
+        "ext-openssl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "mradang\\Encryption\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}
