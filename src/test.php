@@ -2,7 +2,7 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-$key = 'dc2ee8ffcda0727e532b5159ba2a0909';
+$key = md5(time());
 
 $text = json_encode([
     'method' => 'webservice',
@@ -12,9 +12,10 @@ $text = json_encode([
     ],
 ], JSON_UNESCAPED_UNICODE);
 
-$encrypt = encrypt($text, $key);
+$encrypter = new \mradang\Encryption\Encrypter($key);
 
-$decrypt = decrypt($encrypt, $key);
+$encrypt = $encrypter->encrypt($text);
+$decrypt = $encrypter->decrypt($encrypt, $key);
 
 var_dump($encrypt, $decrypt);
 
