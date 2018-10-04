@@ -15,7 +15,7 @@ $text = json_encode([
 $encrypter = new \mradang\Encryption\Encrypter($key);
 
 $encrypt = $encrypter->encrypt($text);
-$decrypt = $encrypter->decrypt($encrypt, $key);
+$decrypt = $encrypter->decrypt($encrypt);
 
 var_dump($encrypt, $decrypt);
 
